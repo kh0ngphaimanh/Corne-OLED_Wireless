@@ -7,9 +7,19 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <19 20>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -21,10 +31,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&kp LCTRL  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LSHFT  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&kp TAB       &kp Q  &kp W  &kp F      &kp P               &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SEMICOLON  &kp DELETE
+&kp LEFT_ALT  &kp A  &kp R  &kp S      &kp T               &kp G        &kp M            &kp N      &kp E            &kp I    &kp O          &trans
+&kp LSHFT     &kp Z  &kp X  &kp C      &kp D               &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH       &mo 3
+                            &kp LCTRL  &mt LEFT_GUI ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT
             >;
         };
 
@@ -36,10 +46,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB          &kp N1           &kp N2          &kp N3           &kp N4           &kp N5             &kp N6    &kp N7    &kp N8    &kp N9     &kp N0  &kp BSPC
-&bt BT_CLR       &bt BT_SEL 0     &bt BT_SEL 1    &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans  &trans
-&rgb_ug RGB_EFF  &rgb_ug RGB_TOG  &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &rgb_ug RGB_HUI  &rgb_ug RGB_SAI    &trans    &trans    &trans    &trans     &trans  &trans
-                                                  &rgb_ug RGB_SPI  &trans           &kp SPACE          &kp RET   &trans    &kp RALT
+&trans  &kp EXCLAMATION  &kp AT_SIGN      &kp HASH         &kp DOLLAR        &kp PERCENT        &kp CARET        &kp AMPERSAND      &kp ASTERISK     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
+&trans  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_NUMBER_4   &kp KP_NUMBER_5    &kp KP_NUMBER_6  &kp KP_NUMBER_7    &kp KP_NUMBER_8  &kp KP_NUMBER_9       &kp KP_NUMBER_0        &trans
+&trans  &trans           &kp TILDE        &kp GRAVE        &kp LEFT_BRACKET  &kp LEFT_BRACE     &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA        &kp PERIOD            &kp SLASH              &trans
+                                          &trans           &trans            &trans             &trans           &trans             &trans
             >;
         };
 
@@ -51,10 +61,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&trans  &trans         &trans            &kp UNDERSCORE  &kp PLUS        &kp PAGE_UP      &none           &trans          &trans              &kp BACKSLASH    &kp PIPE         &trans
+&trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL       &kp PAGE_DOWN    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &mkp RCLK        &trans
+&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp C_AC_COPY   &kp C_AC_PASTE  &kp SEMICOLON    &kp C_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
+                                         &trans          &trans          &trans           &trans          &trans          &trans
+            >;
+        };
+
+        function {
+            bindings = <
+&trans  &kp F1    &kp F2      &kp F3        &kp F4        &kp F5          &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
+&trans  &kp F11   &kp F12     &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans       &trans
+&trans  &kp CLCK  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &trans  &trans  &trans  &trans  &kp C_RESET  &trans
+                              &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
     };
