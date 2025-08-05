@@ -63,7 +63,7 @@
             bindings = <
 &trans  &trans         &trans            &kp UNDERSCORE  &kp PLUS        &kp PAGE_UP      &none           &trans          &trans              &kp BACKSLASH    &kp PIPE         &trans
 &trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL       &kp PAGE_DOWN    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &mkp RCLK        &trans
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp C_AC_COPY   &kp C_AC_PASTE  &kp SEMICOLON    &kp C_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
+&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp K_COPY      &kp C_AC_PASTE  &kp SEMICOLON    &kp C_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
                                          &trans          &trans          &trans           &trans          &trans          &trans
             >;
         };
