@@ -21,11 +21,25 @@
     };
 
     macros {
-        new_macro: new_macro {
+        select: select {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <>;
-            label = "NEW_MACRO";
+            bindings = <&kp LC(LEFT_SHIFT)>;
+            label = "SELECT";
+        };
+
+        copy: copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(C)>;
+            label = "COPY";
+        };
+
+        paste: paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(V))>;
+            label = "PASTE";
         };
     };
 
@@ -56,7 +70,7 @@
 
             bindings = <
 &trans  &kp EXCLAMATION    &kp AT_SIGN   &kp HASH      &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5            &kp NUMBER_6     &kp N7             &kp N8        &kp N9                &kp N0                 &trans
+&trans  &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5            &kp NUMBER_6     &kp N7             &kp N8        &kp N9                &kp N0                 &none
 &trans  &kp DOUBLE_QUOTES  &kp TILDE     &kp GRAVE     &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA     &kp PERIOD            &kp SLASH              &trans
                                          &trans        &trans            &trans            &trans           &trans             &trans
             >;
@@ -70,10 +84,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &none          &none             &kp UNDERSCORE  &kp PLUS     &kp PAGE_UP      &none           &none           &none               &kp BACKSLASH    &kp PIPE         &trans
-&trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL    &kp PAGE_DOWN    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &mkp RCLK        &trans
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp K_COPY      &kp K_PASTE  &kp SEMICOLON    &kp K_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
-                                         &trans          &trans       &trans           &trans          &trans          &trans
+&trans  &select        &none             &kp UNDERSCORE  &kp PLUS   &kp PAGE_UP      &none           &none           &none               &kp BACKSLASH    &kp PIPE         &trans
+&trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL  &kp PAGE_DOWN    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &mkp RCLK        &trans
+&trans  &kp LESS_THAN  &kp GREATER_THAN  &copy           &paste     &kp SEMICOLON    &kp K_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
+                                         &trans          &trans     &trans           &trans          &trans          &trans
             >;
         };
 
