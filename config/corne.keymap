@@ -54,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp F      &kp P      &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SEMICOLON  &kp DELETE
-&kp LEFT_ALT  &kp A  &kp R  &kp S      &kp T      &kp G        &kp M            &kp N      &kp E            &kp I    &kp O          &kp SINGLE_QUOTE
-&kp LSHFT     &kp Z  &kp X  &kp C      &kp D      &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH       &mo 3
-                            &kp LCTRL  &kp ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT
+&kp TAB       &kp Q  &kp W  &kp F      &kp P               &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SEMICOLON  &kp DELETE
+&kp LEFT_ALT  &kp A  &kp R  &kp S      &kp T               &kp G        &kp M            &kp N      &kp E            &kp I    &kp O          &kp SINGLE_QUOTE
+&kp LSHFT     &kp Z  &kp X  &kp C      &kp D               &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH       &mo 3
+                            &kp LCTRL  &mt LEFT_WIN ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT
             >;
         };
 
@@ -96,7 +96,7 @@
 &trans  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5          &kp F6      &kp F7  &kp F8  &kp F9  &kp F10      &trans
 &trans  &kp F11   &kp F12       &none         &none         &none           &none       &none   &none   &none   &none        &trans
 &trans  &kp CLCK  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_CLR  &none   &none   &none   &kp C_RESET  &trans
-                                &trans        &kp LEFT_WIN  &trans          &trans      &trans  &trans
+                                &trans        &trans        &trans          &trans      &trans  &trans
             >;
         };
     };
