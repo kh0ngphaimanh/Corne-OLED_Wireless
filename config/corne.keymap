@@ -5,10 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -18,35 +16,17 @@
             bindings = <&kp ESCAPE>;
             key-positions = <19 20>;
         };
-    };
 
-    macros {
-        select: select {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LEFT_SHIFT)>;
-            label = "SELECT";
-        };
-
-        copy: copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(C)>;
-            label = "COPY";
-        };
-
-        paste: paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LS(V))>;
-            label = "PASTE";
+        toHome {
+            bindings = <&to 0>;
+            key-positions = <41 36>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        colemark_dh {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -54,50 +34,57 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q  &kp W  &kp F      &kp P               &kp B        &kp J            &kp L      &kp U            &kp Y    &kp SEMICOLON  &kp DELETE
-&kp LEFT_ALT  &kp A  &kp R  &kp S      &kp T               &kp G        &kp M            &kp N      &kp E            &kp I    &kp O          &kp SINGLE_QUOTE
-&kp LSHFT     &kp Z  &kp X  &kp C      &kp D               &kp V        &kp K            &kp H      &kp COMMA        &kp DOT  &kp FSLH       &mo 3
-                            &kp LCTRL  &mt LEFT_WIN ENTER  &lt 1 TAB    &lt 2 BACKSPACE  &kp SPACE  &kp RIGHT_SHIFT
+&kp ESCAPE  &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U        &kp Y            &kp SEMICOLON    &kp DELETE
+&kp TAB     &mt A LEFT_WIN  &mt R LEFT_ALT  &mt S LCTRL  &mt T LEFT_SHIFT  &kp G        &kp M          &mt N RIGHT_SHIFT  &mt E RCTRL  &mt I RIGHT_ALT  &mt O RIGHT_WIN  &none
+&none       &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA    &kp DOT          &kp FSLH         &tog 3
+                                            &tog 2       &kp TAB           &kp SPACE    &kp BACKSPACE  &kp ENTER          &tog 4
             >;
+
+            label = "colemark_dh";
         };
 
-        lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        qwerty {
             bindings = <
-&trans  &kp EXCLAMATION    &kp AT_SIGN   &kp HASH      &kp DOLLAR        &kp PERCENT       &kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans
-&trans  &kp NUMBER_1       &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4      &kp N5            &kp NUMBER_6     &kp N7             &kp N8        &kp N9                &kp N0                 &none
-&trans  &kp DOUBLE_QUOTES  &kp TILDE     &kp GRAVE     &kp LEFT_BRACKET  &kp LEFT_BRACE    &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp COMMA     &kp PERIOD            &kp SLASH              &trans
-                                         &trans        &trans            &trans            &trans           &trans             &trans
+&trans  &kp Q           &kp W           &kp E        &kp R             &kp T     &kp Y   &kp U              &kp I        &kp O            &kp P               &trans
+&trans  &mt A LEFT_WIN  &mt S LEFT_ALT  &mt D LCTRL  &mt F LEFT_SHIFT  &kp G     &kp H   &mt J RIGHT_SHIFT  &mt K RCTRL  &mt L RIGHT_ALT  &mt SEMI RIGHT_WIN  &trans
+&trans  &kp Z           &kp X           &kp C        &kp V             &kp B     &kp N   &kp M              &kp COMMA    &kp DOT          &kp FSLH            &trans
+                                        &trans       &trans            &trans    &trans  &trans             &trans
             >;
+
+            label = "qwerty";
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        number {
             bindings = <
-&trans  &select        &none             &kp UNDERSCORE  &kp PLUS   &kp PAGE_UP      &none           &none           &none               &kp BACKSLASH    &kp PIPE         &trans
-&trans  &kp HOME       &kp END           &kp MINUS       &kp EQUAL  &kp PAGE_DOWN    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW        &kp RIGHT_ARROW  &mkp RCLK        &trans
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &copy           &paste     &kp SEMICOLON    &kp K_NEXT      &kp C_REWIND    &kp C_FAST_FORWARD  &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &trans
-                                         &trans          &trans     &trans           &trans          &trans          &trans
+&trans  &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &kp N0        &trans
+&trans  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK  &trans
+&trans  &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET     &trans
+                                   &trans                &trans                 &trans         &trans         &trans            &trans
             >;
+
+            label = "number";
         };
 
         function {
             bindings = <
-&trans  &kp F1    &kp F2        &kp F3        &kp F4        &kp F5          &kp F6      &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11   &kp F12       &none         &none         &none           &none       &none   &none   &none   &none        &trans
-&trans  &kp CLCK  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &bt BT_CLR  &none   &none   &none   &kp C_RESET  &trans
-                                &trans        &trans        &trans          &trans      &trans  &trans
+&trans  &kp F2        &kp F3                &kp F4           &kp F5           &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans
+&trans  &kp F1        &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp PRINTSCREEN  &to 0     &trans  &trans  &trans  &trans   &kp F12  &trans
+&trans  &kp C_BRI_UP  &kp C_BRIGHTNESS_INC  &kp LC(C)        &kp LC(LS(V))    &to 1     &trans  &trans  &trans  &trans   &trans   &trans
+                                            &trans           &trans           &trans    &trans  &trans  &trans
             >;
+
+            label = "function";
+        };
+
+        nav {
+            bindings = <
+&trans  &kp LA(F4)           &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none         &kp HOME                       &kp LC(LS(TAB))  &kp LC(TAB)   &kp END                          &kp BACKSPACE  &trans
+&trans  &kp LG(TAB)          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp DELETE    &mt LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp ENTER      &trans
+&trans  &mt LC(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &none         &mkp LCLK                      &none            &none         &none                            &none          &trans
+                                             &trans          &trans           &trans        &trans                         &trans           &trans
+            >;
+
+            label = "nav";
         };
     };
 };
