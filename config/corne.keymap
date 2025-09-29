@@ -8,6 +8,8 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mt { tapping-term-ms = <220>; };
+
 / {
     combos {
         compatible = "zmk,combos";
