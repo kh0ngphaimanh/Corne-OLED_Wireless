@@ -24,7 +24,12 @@
 
         toHome {
             bindings = <&to 0>;
-            key-positions = <41 36>;
+            key-positions = <37 40>;
+        };
+
+        shiftHold {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <38 39>;
         };
     };
 
@@ -39,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE  &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U        &kp Y            &kp SEMICOLON    &kp DELETE
-&kp TAB     &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp SINGLE_QUOTE
-&kp GRAVE   &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA    &kp DOT          &kp FSLH         &tog 3
-                                            &tog 2       &kp TAB           &kp SPACE    &kp BACKSPACE  &kp ENTER          &tog 4
+&kp ESCAPE      &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U        &kp Y            &kp SEMICOLON    &kp DELETE
+&kp GRAVE       &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA    &kp DOT          &kp FSLH         &tog 3
+                                                &tog 2       &kp TAB           &kp SPACE    &kp BACKSPACE  &kp ENTER          &tog 4
             >;
 
             label = "colemark_dh";
@@ -83,10 +88,10 @@
 
         nav {
             bindings = <
-&trans  &kp LA(F4)           &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none         &kp HOME                       &kp LC(LS(TAB))  &kp LC(TAB)   &kp END                          &kp BACKSPACE  &trans
-&trans  &kp LG(TAB)          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp DELETE    &mt LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp ENTER      &trans
-&trans  &mt LC(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &none         &mkp LCLK                      &none            &none         &none                            &none          &trans
-                                             &trans          &trans           &trans        &trans                         &trans           &trans
+&trans  &kp LA(F4)           &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE        &kp HOME                       &kp LC(LS(TAB))  &kp LC(TAB)   &kp END                          &kp BACKSPACE  &trans
+&trans  &kp LG(TAB)          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LEFT_SHIFT    &mt LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp ENTER      &trans
+&trans  &mt LC(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &none             &mkp LCLK                      &none            &none         &none                            &none          &trans
+                                             &trans          &trans           &trans            &trans                         &trans           &trans
             >;
 
             label = "nav";
