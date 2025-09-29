@@ -35,7 +35,7 @@
 
             bindings = <
 &kp ESCAPE  &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U        &kp Y            &kp SEMICOLON    &kp DELETE
-&kp TAB     &mt A LEFT_WIN  &mt R LEFT_ALT  &mt S LCTRL  &mt T LEFT_SHIFT  &kp G        &kp M          &mt N RIGHT_SHIFT  &mt E RCTRL  &mt I RIGHT_ALT  &mt O RIGHT_WIN  &kp SINGLE_QUOTE
+&kp TAB     &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp SINGLE_QUOTE
 &kp GRAVE   &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA    &kp DOT          &kp FSLH         &tog 3
                                             &tog 2       &kp TAB           &kp SPACE    &kp BACKSPACE  &kp ENTER          &tog 4
             >;
@@ -45,9 +45,9 @@
 
         qwerty {
             bindings = <
-&trans  &kp Q           &kp W           &kp E        &kp R             &kp T     &kp Y   &kp U              &kp I        &kp O            &kp P               &trans
-&trans  &mt A LEFT_WIN  &mt S LEFT_ALT  &mt D LCTRL  &mt F LEFT_SHIFT  &kp G     &kp H   &mt J RIGHT_SHIFT  &mt K RCTRL  &mt L RIGHT_ALT  &mt SEMI RIGHT_WIN  &trans
-&trans  &kp Z           &kp X           &kp C        &kp V             &kp B     &kp N   &kp M              &kp COMMA    &kp DOT          &kp FSLH            &trans
+&trans  &kp Q           &kp W           &kp E        &kp R             &kp T     &kp Y   &kp U              &kp I        &kp O            &kp P                    &trans
+&trans  &mt LEFT_WIN A  &mt LEFT_ALT S  &mt LCTRL D  &mt LEFT_SHIFT F  &kp G     &kp H   &mt RIGHT_SHIFT J  &mt RCTRL K  &mt RIGHT_ALT L  &mt RIGHT_WIN SEMICOLON  &trans
+&trans  &kp Z           &kp X           &kp C        &kp V             &kp B     &kp N   &kp M              &kp COMMA    &kp DOT          &kp FSLH                 &trans
                                         &trans       &trans            &trans    &trans  &trans             &trans
             >;
 
@@ -67,10 +67,10 @@
 
         function {
             bindings = <
-&trans  &kp F2        &kp F3                &kp F4           &kp F5           &kp F6    &kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &trans
-&trans  &kp F1        &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp PRINTSCREEN  &to 0     &none   &none   &none   &none    &kp F12  &trans
-&trans  &kp C_BRI_UP  &kp C_BRIGHTNESS_INC  &kp LC(C)        &kp LC(LS(V))    &to 1     &none   &none   &none   &none    &none    &trans
-                                            &trans           &trans           &trans    &trans  &trans  &trans
+&trans  &kp F2        &kp F3                &kp F4           &kp F5           &kp F6    &kp F7  &kp F8         &kp F9  &kp F10  &kp F11  &trans
+&trans  &kp F1        &kp C_VOLUME_DOWN     &kp C_VOLUME_UP  &kp PRINTSCREEN  &to 0     &none   &kp LG(SPACE)  &none   &none    &kp F12  &trans
+&trans  &kp C_BRI_UP  &kp C_BRIGHTNESS_INC  &kp LC(C)        &kp LC(LS(V))    &to 1     &none   &none          &none   &none    &none    &trans
+                                            &trans           &trans           &trans    &trans  &trans         &trans
             >;
 
             label = "function";
