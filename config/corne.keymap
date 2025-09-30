@@ -44,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE      &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U        &kp Y            &kp SEMICOLON    &kp DELETE
-&kp GRAVE       &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt RIGHT_SHIFT N  &mt RCTRL E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA    &kp DOT          &kp FSLH         &tog 3
-                                                &tog 2       &kp TAB           &kp SPACE    &kp BACKSPACE  &kp ENTER          &tog 4
+&kp LG(TAB)    &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L              &kp U                  &kp Y            &kp SEMICOLON    &kp LA(F4)
+&kp LC(GRAVE)  &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt RIGHT_SHIFT N  &mt RCTRL E            &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp SINGLE_QUOTE
+&kp LC(LA(T))  &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H              &kp COMMA              &kp DOT          &kp FSLH         &tog 3
+                                               &kp TAB      &mo 2             &kp SPACE    &kp BACKSPACE  &lt 4 ENTER        &mt LG(TAB) RIGHT_WIN
             >;
 
             label = "colemark_dh";
@@ -66,10 +66,10 @@
 
         number {
             bindings = <
-&trans  &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &kp N0        &trans
-&trans  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK  &trans
-&trans  &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET     &trans
-                                   &trans                &trans                 &trans         &trans         &trans            &trans
+&trans     &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &mt SEMICOLON N0  &trans
+&kp GRAVE  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK      &trans
+&trans     &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET         &trans
+                                      &trans                &trans                 &trans         &trans         &trans            &trans
             >;
 
             label = "number";
@@ -88,10 +88,10 @@
 
         nav {
             bindings = <
-&trans  &kp LA(F4)           &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE        &kp HOME                       &kp LC(LS(TAB))  &kp LC(TAB)   &kp END                          &kp BACKSPACE  &trans
-&trans  &kp LG(TAB)          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LEFT_SHIFT    &mt LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &kp ENTER      &trans
-&trans  &mt LC(GRAVE) GRAVE  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &none             &mkp LCLK                      &none            &none         &none                            &none          &trans
-                                             &trans          &trans           &trans            &trans                         &trans           &trans
+&trans  &none      &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE        &mt RC(HOME) HOME              &kp LC(LS(TAB))  &kp LC(TAB)   &mt RC(END) END                  &none  &trans
+&trans  &kp LCTRL  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LEFT_SHIFT    &mt LC(LEFT_ARROW) LEFT_ARROW  &kp DOWN_ARROW   &kp UP_ARROW  &mt LC(RIGHT_ARROW) RIGHT_ARROW  &none  &trans
+&trans  &none      &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &none             &mkp LCLK                      &kp PAGE_DOWN    &kp PAGE_UP   &none                            &none  &trans
+                                   &trans          &trans           &trans            &trans                         &trans           &trans
             >;
 
             label = "nav";
