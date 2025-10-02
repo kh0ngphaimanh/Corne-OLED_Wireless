@@ -26,6 +26,11 @@
             bindings = <&to 0>;
             key-positions = <38 39>;
         };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <7 8>;
+        };
     };
 
     keymap {
