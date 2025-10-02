@@ -39,10 +39,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE      &kp Q           &kp W           &kp F            &kp P             &kp B            &kp J      &kp L             &kp U        &kp Y           &kp SEMICOLON   &kp GRAVE
-&kp TAB         &mt LEFT_WIN A  &mt LEFT_ALT R  &mt RCTRL S      &mt LEFT_SHIFT T  &kp G            &kp M      &mt LEFT_SHIFT N  &mt RCTRL E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z           &kp X           &kp C            &kp D             &kp V            &kp K      &kp H             &kp COMMA    &kp DOT         &kp FSLH        &kp LC(LS(V))
-                                                &mt LC(X) LC(C)  &lt 2 LEFT_WIN    &kp BACKSPACE    &kp SPACE  &lt 4 ENTER       &caps_word
+&kp ESCAPE      &kp Q           &kp W           &kp F            &kp P             &kp B        &kp J          &kp L             &kp U        &kp Y           &kp SEMICOLON   &kp GRAVE
+&kp TAB         &mt LEFT_WIN A  &mt LEFT_ALT R  &mt RCTRL S      &mt LEFT_SHIFT T  &kp G        &kp M          &mt LEFT_SHIFT N  &mt RCTRL E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
+&kp LEFT_SHIFT  &kp Z           &kp X           &kp C            &kp D             &kp V        &kp K          &kp H             &kp COMMA    &kp DOT         &kp FSLH        &kp LC(LS(V))
+                                                &mt LC(X) LC(C)  &lt 2 LEFT_WIN    &kp SPACE    &kp BACKSPACE  &lt 4 ENTER       &caps_word
             >;
 
             label = "colemark_dh";
