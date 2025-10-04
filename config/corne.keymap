@@ -19,7 +19,7 @@
         compatible = "zmk,combos";
 
         function {
-            bindings = <&to 3>;
+            bindings = <&to 4>;
             key-positions = <37 40>;
         };
 
@@ -45,10 +45,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LEFT_ALT    &kp Q           &kp W           &kp F            &kp P             &kp B        &kp J          &kp L             &kp U          &kp Y           &kp SEMICOLON   &kp GRAVE
-&kp RCTRL       &mt LEFT_WIN A  &mt LEFT_ALT R  &mt RCTRL S      &mt LEFT_SHIFT T  &kp G        &kp M          &mt LEFT_SHIFT N  &mt RCTRL E    &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
-&kp LEFT_SHIFT  &kp Z           &kp X           &kp C            &kp D             &kp V        &kp K          &kp H             &kp COMMA      &kp DOT         &kp FSLH        &caps_word
-                                                &mt LC(X) LC(C)  &lt 2 TAB         &kp SPACE    &kp BACKSPACE  &lt 4 ENTER       &kp LC(LS(V))
+&kp ESCAPE       &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L             &kp U        &kp Y           &kp SEMICOLON   &kp GRAVE
+&kp LC(TAB)      &mt LEFT_WIN A  &mt LEFT_ALT R  &mt RCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt LEFT_SHIFT N  &mt RCTRL E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
+&kp LS(LC(TAB))  &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H             &kp COMMA    &kp DOT         &kp FSLH        &caps_word
+                                                 &to 0        &lt 2 TAB         &kp SPACE    &kp BACKSPACE  &lt 3 ENTER       &to 1
             >;
 
             label = "colemark";
@@ -76,26 +76,26 @@
             label = "number";
         };
 
-        function {
-            bindings = <
-&bt BT_NXT  &kp F1   &kp F2   &mt F3 SLASH  &mt ASTERISK F4  &kp F5     &kp C_BRIGHTNESS_INC  &kp N7  &kp N8  &kp N9  &kp C_VOLUME_UP    &trans
-&bt BT_PRV  &kp F6   &kp F7   &mt MINUS F8  &mt PLUS F9      &kp F10    &kp C_BRIGHTNESS_DEC  &kp N4  &kp N5  &kp N6  &kp C_VOLUME_DOWN  &trans
-&bt BT_CLR  &kp F11  &kp F12  &kp EQUAL     &to 0            &to 1      &kp N0                &kp N1  &kp N2  &kp N3  &kp K_MUTE         &trans
-                              &trans        &trans           &trans     &trans                &trans  &trans
-            >;
-
-            label = "function";
-        };
-
         nav {
             bindings = <
-&trans  &kp LC(LA(T))  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &kp LA(F4)    &trans
-&trans  &kp LC(GRAVE)  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LC(LEFT_SHIFT)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &kp LEFT_WIN  &trans
-&trans  &none          &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp RCTRL             &none           &mkp LCLK       &none          &none            &none         &trans
-                                       &trans          &trans           &trans                &trans          &trans          &trans
+&trans  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
+&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LC(LEFT_SHIFT)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
+&trans  &none  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp RCTRL             &none           &mkp LCLK       &none          &none            &none  &trans
+                               &trans          &trans           &trans                &trans          &trans          &trans
             >;
 
             label = "nav";
+        };
+
+        function {
+            bindings = <
+&trans  &kp F1   &kp F2   &mt F3 SLASH  &mt ASTERISK F4  &kp F5        &kp C_BRIGHTNESS_INC  &kp N7  &kp N8  &kp N9  &kp C_VOLUME_UP    &trans
+&trans  &kp F6   &kp F7   &mt MINUS F8  &mt PLUS F9      &kp F10       &kp C_BRIGHTNESS_DEC  &kp N4  &kp N5  &kp N6  &kp C_VOLUME_DOWN  &trans
+&trans  &kp F11  &kp F12  &bt BT_PRV    &bt BT_NXT       &bt BT_CLR    &kp N0                &kp N1  &kp N2  &kp N3  &kp K_MUTE         &trans
+                          &trans        &trans           &trans        &trans                &trans  &trans
+            >;
+
+            label = "function";
         };
     };
 };
