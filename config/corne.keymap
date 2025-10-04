@@ -78,10 +78,10 @@
 
         nav {
             bindings = <
-&trans  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
-&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LC(LEFT_SHIFT)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
-&trans  &none  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp RCTRL             &none           &mkp LCLK       &none          &none            &none  &trans
-                               &trans          &trans           &trans                &trans          &trans          &trans
+&trans  &none         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
+&trans  &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LC(LEFT_SHIFT)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
+&trans  &kp LEFT_WIN  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp RCTRL             &none           &mkp LCLK       &none          &none            &none  &trans
+                                      &trans          &trans           &trans                &trans          &trans          &trans
             >;
 
             label = "nav";
