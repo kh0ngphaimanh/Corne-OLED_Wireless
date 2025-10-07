@@ -19,13 +19,8 @@
         compatible = "zmk,combos";
 
         function {
-            bindings = <&to 4>;
-            key-positions = <37 40>;
-        };
-
-        toHome {
-            bindings = <&to 0>;
-            key-positions = <38 39>;
+            bindings = <&tog 3>;
+            key-positions = <36 41>;
         };
 
         escape {
@@ -45,31 +40,20 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE       &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J          &kp L             &kp U        &kp Y           &kp SEMICOLON   &kp GRAVE
-&kp LC(TAB)      &mt LEFT_WIN A  &mt LEFT_ALT R  &mt RCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M          &mt LEFT_SHIFT N  &mt RCTRL E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
-&kp LS(LC(TAB))  &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K          &kp H             &kp COMMA    &kp DOT         &kp FSLH        &caps_word
-                                                 &to 0        &lt 2 TAB         &kp SPACE    &kp BACKSPACE  &lt 3 ENTER       &to 1
+&kp TAB       &kp Q           &kp W           &kp F             &kp P        &kp B        &kp J          &kp L        &kp U             &kp Y           &kp SEMICOLON   &kp GRAVE
+&kp RCTRL     &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G        &kp M          &mt RCTRL N  &mt LEFT_SHIFT E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
+&kp LEFT_WIN  &kp Z           &kp X           &kp C             &kp D        &kp V        &kp K          &kp H        &kp COMMA         &kp DOT         &kp FSLH        &kp LEFT_ALT
+                                              &kp LEFT_SHIFT    &mo 2        &kp SPACE    &kp BACKSPACE  &lt 1 ENTER  &caps_word
             >;
 
             label = "colemark";
         };
 
-        qwerty {
-            bindings = <
-&trans  &kp Q           &kp W           &kp E        &kp R             &kp T     &kp Y   &kp U             &kp I        &kp O           &kp P                   &trans
-&trans  &mt LEFT_WIN A  &mt LEFT_ALT S  &mt RCTRL D  &mt LEFT_SHIFT F  &kp G     &kp H   &mt LEFT_SHIFT J  &mt RCTRL K  &mt LEFT_ALT L  &mt LEFT_WIN SEMICOLON  &trans
-&trans  &kp Z           &kp X           &kp C        &kp V             &kp B     &kp N   &kp M             &kp COMMA    &kp DOT         &kp FSLH                &trans
-                                        &trans       &trans            &trans    &trans  &trans            &trans
-            >;
-
-            label = "qwerty";
-        };
-
         number {
             bindings = <
-&trans  &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &mt SEMICOLON N0  &trans
-&trans  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK      &trans
-&trans  &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET         &trans
+&trans  &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &kp N0        &trans
+&trans  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK  &trans
+&trans  &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET     &trans
                                    &trans                &trans                 &trans         &trans         &trans            &trans
             >;
 
@@ -78,10 +62,10 @@
 
         nav {
             bindings = <
-&trans  &none         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &kp DELETE            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
-&trans  &none         &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp LC(LEFT_SHIFT)    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
-&trans  &kp LEFT_WIN  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp RCTRL             &none           &mkp LCLK       &none          &none            &none  &trans
-                                      &trans          &trans           &trans                &trans          &trans          &trans
+&trans  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
+&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp RCTRL        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
+&trans  &none  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp LS(RCTRL)    &mkp LCLK       &none           &none          &none            &none  &trans
+                               &trans          &trans           &trans           &trans          &trans          &trans
             >;
 
             label = "nav";
@@ -89,10 +73,10 @@
 
         function {
             bindings = <
-&trans  &kp F1   &kp F2   &mt F3 SLASH  &mt ASTERISK F4  &kp F5        &kp C_BRIGHTNESS_INC  &kp N7  &kp N8  &kp N9  &kp C_VOLUME_UP    &trans
-&trans  &kp F6   &kp F7   &mt MINUS F8  &mt PLUS F9      &kp F10       &kp C_BRIGHTNESS_DEC  &kp N4  &kp N5  &kp N6  &kp C_VOLUME_DOWN  &trans
-&trans  &kp F11  &kp F12  &bt BT_PRV    &bt BT_NXT       &bt BT_CLR    &kp N0                &kp N1  &kp N2  &kp N3  &kp K_MUTE         &trans
-                          &trans        &trans           &trans        &trans                &trans  &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp C_BRI_UP            &kp C_VOLUME_UP  &bt BT_NXT      &bt BT_PRV          &bt BT_CLR  &none  &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp C_BRIGHTNESS_DEC    &kp C_VOL_DN     &kp C_NEXT      &kp C_FAST_FORWARD  &none       &none  &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp C_BRI_AUTO          &kp K_MUTE       &kp C_PREVIOUS  &kp C_REWIND        &none       &none  &trans
+                         &trans   &trans   &trans                  &trans           &trans          &trans
             >;
 
             label = "function";
