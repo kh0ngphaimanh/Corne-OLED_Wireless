@@ -55,10 +55,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LA(F4)     &kp Q           &kp W           &kp F             &kp P        &kp B        &kp J           &kp L        &kp U              &kp Y            &kp SQT          &kp LS(PRINTSCREEN)
-&kp TAB        &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G        &kp M           &mt LCTRL N  &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp LS(TAB)
-&kp LC(SPACE)  &kp Z           &kp X           &kp C             &kp D        &kp V        &kp K           &kp H        &kp COMMA          &kp DOT          &kp SEMICOLON    &tog 4
-                                               &kp RCTRL         &mo 1        &kp SPACE    &kp LEFT_SHIFT  &mo 2        &kp LEFT_WIN
+&kp LA(F4)     &kp Q           &kp W           &kp F             &kp P        &kp B                   &kp J          &kp L        &kp U              &kp Y            &kp SQT          &kp LS(PRINTSCREEN)
+&kp TAB        &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G                   &kp M          &mt LCTRL N  &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp LS(TAB)
+&kp LC(SPACE)  &kp Z           &kp X           &kp C             &kp D        &kp V                   &kp K          &kp H        &kp COMMA          &kp DOT          &kp SEMICOLON    &tog 4
+                                               &kp ESCAPE        &lt 1 TAB    &mt LEFT_SHIFT SPACE    &kp BACKSPACE  &lt 2 ENTER  &kp DEL
             >;
 
             label = "base";
