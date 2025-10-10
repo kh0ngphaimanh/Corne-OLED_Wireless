@@ -18,21 +18,36 @@
     combos {
         compatible = "zmk,combos";
 
-        function {
-            bindings = <&tog 3>;
-            key-positions = <36 41>;
-        };
-
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <7 8>;
+            key-positions = <13 14>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <1 2>;
+        };
+
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <8 9>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <20 21>;
+        };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <32 33>;
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        colemark {
+        base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -40,46 +55,66 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB       &kp Q           &kp W           &kp F             &kp P        &kp B        &kp J          &kp L        &kp U             &kp Y           &kp SEMICOLON   &kp GRAVE
-&kp RCTRL     &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G        &kp M          &mt RCTRL N  &mt LEFT_SHIFT E  &mt LEFT_ALT I  &mt LEFT_WIN O  &kp SINGLE_QUOTE
-&kp LEFT_WIN  &kp Z           &kp X           &kp C             &kp D        &kp V        &kp K          &kp H        &kp COMMA         &kp DOT         &kp FSLH        &kp LEFT_ALT
-                                              &kp LEFT_SHIFT    &mo 2        &kp SPACE    &kp BACKSPACE  &lt 1 ENTER  &caps_word
+&kp LA(F4)     &kp Q           &kp W           &kp F             &kp P        &kp B        &kp J    &kp L        &kp U              &kp Y            &kp SQT          &kp LS(PRINTSCREEN)
+&kp LC(ENTER)  &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G        &kp M    &mt LCTRL N  &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &caps_word
+&kp LC(SPACE)  &kp Z           &kp X           &kp C             &kp D        &kp V        &kp K    &kp H        &kp COMMA          &kp DOT          &kp SEMICOLON    &tog 4
+                                               &kp RCTRL         &mo 1        &kp SPACE    &kp TAB  &mo 2        &kp LEFT_WIN
             >;
 
-            label = "colemark";
-        };
-
-        number {
-            bindings = <
-&trans  &kp N1           &kp N2    &kp N3                &kp N4                 &kp N5         &kp N6         &kp N7            &kp N8             &kp N9          &kp N0        &trans
-&trans  &kp DOLLAR       &kp PLUS  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT_SIGN    &kp PIPE       &kp MINUS         &kp EQUAL          &kp UNDERSCORE  &kp ASTERISK  &trans
-&trans  &kp EXCLAMATION  &kp HASH  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp TILDE      &kp AMPERSAND  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT     &kp CARET     &trans
-                                   &trans                &trans                 &trans         &trans         &trans            &trans
-            >;
-
-            label = "number";
+            label = "base";
         };
 
         nav {
             bindings = <
-&trans  &none  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &none            &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &none  &trans
-&trans  &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp RCTRL        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW   &kp RIGHT_ARROW  &none  &trans
-&trans  &none  &mkp RCLK       &msc SCRL_UP    &msc SCRL_DOWN   &kp LS(RCTRL)    &mkp LCLK       &none           &none          &none            &none  &trans
-                               &trans          &trans           &trans           &trans          &trans          &trans
+&bt BT_NXT  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp TAB         &kp LS(TAB)      &kp C_VOLUME_UP    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &kp DEL   &trans
+&bt BT_PRV  &kp LGUI              &kp LALT              &kp LSHFT       &kp LCTRL        &kp C_VOL_DN       &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &kp BSPC  &trans
+&bt BT_CLR  &mmv MOVE_LEFT        &mmv MOVE_UP          &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp K_MUTE         &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &kp RET   &trans
+                                                        &mkp RCLK       &trans           &trans             &trans          &trans          &mkp LCLK
             >;
 
             label = "nav";
         };
 
-        function {
+        symbols {
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp C_BRI_UP            &kp C_VOLUME_UP  &bt BT_NXT      &bt BT_PRV          &bt BT_CLR  &none  &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp C_BRIGHTNESS_DEC    &kp C_VOL_DN     &kp C_NEXT      &kp C_FAST_FORWARD  &none       &none  &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp C_BRI_AUTO          &kp K_MUTE       &kp C_PREVIOUS  &kp C_REWIND        &none       &none  &trans
-                         &trans   &trans   &trans                  &trans           &trans          &trans
+&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE  &kp GRAVE      &kp COLON  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LBKT      &kp RBKT         &trans
+&trans  &kp TILDE      &kp AT_SIGN       &kp HASH              &kp DOLLAR       &kp PERCENT    &kp EQUAL  &kp LCTRL             &kp LSHFT              &kp LGUI      &kp LALT         &trans
+&trans  &kp CARET      &kp AMPERSAND     &kp NON_US_BACKSLASH  &kp SLASH        &kp PIPE       &kp PLUS   &kp MINUS             &kp ASTERISK           &kp QUESTION  &kp EXCLAMATION  &trans
+                                         &trans                &trans           &trans         &trans     &trans                &trans
             >;
 
-            label = "function";
+            label = "symbols";
+        };
+
+        numbers {
+            bindings = <
+&trans  &kp NUMBER_1  &kp N2    &kp N3     &kp N4     &kp N5     &kp N6   &kp N7     &kp N8     &kp N9    &kp N0    &trans
+&trans  &kp LGUI      &kp LALT  &kp LSHFT  &kp LCTRL  &kp F11    &kp F12  &kp RCTRL  &kp RSHFT  &kp RALT  &kp RGUI  &trans
+&trans  &kp F1        &kp F2    &kp F3     &kp F4     &kp F5     &kp F6   &kp F7     &kp F8     &kp F9    &kp F10   &trans
+                                &trans     &trans     &trans     &trans   &trans     &trans
+            >;
+
+            label = "numbers";
+        };
+
+        n_pad {
+            bindings = <
+&kp ESCAPE  &kp Q  &kp W  &kp E   &kp R   &kp ASTERISK       &kp PLUS   &kp N7  &kp N8  &kp N9  &kp RCTRL     &kp LEFT_SHIFT
+&kp GRAVE   &kp A  &kp S  &kp D   &kp F   &kp FSLH           &kp MINUS  &kp N4  &kp N5  &kp N6  &kp N0        &kp LEFT_ALT
+&kp RCTRL   &kp Z  &kp X  &kp C   &kp V   &kp EXCLAMATION    &kp EQUAL  &kp N1  &kp N2  &kp N3  &kp LEFT_WIN  &trans
+                          &trans  &trans  &trans             &trans     &trans  &trans
+            >;
+
+            label = "nums_pad";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        numbers {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
