@@ -55,9 +55,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp LA(F4)     &kp Q           &kp W           &kp F             &kp P        &kp B                   &kp J          &kp L        &kp U              &kp Y            &kp SQT          &kp LS(PRINTSCREEN)
+&kp LA(F4)     &kp Q           &kp W           &kp F             &kp P        &kp B                   &kp J          &kp L        &kp U              &kp Y            &kp SEMICOLON    &kp LS(PRINTSCREEN)
 &kp TAB        &mt LEFT_WIN A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt RCTRL T  &kp G                   &kp M          &mt LCTRL N  &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_WIN O  &kp LS(TAB)
-&kp LC(SPACE)  &kp Z           &kp X           &kp C             &kp D        &kp V                   &kp K          &kp H        &kp COMMA          &kp DOT          &kp SEMICOLON    &tog 4
+&kp LC(SPACE)  &kp Z           &kp X           &kp C             &kp D        &kp V                   &kp K          &kp H        &kp COMMA          &kp DOT          &kp SQT          &tog 4
                                                &kp ESCAPE        &lt 1 TAB    &mt LEFT_SHIFT SPACE    &kp BACKSPACE  &lt 2 ENTER  &kp DEL
             >;
 
@@ -66,10 +66,10 @@
 
         nav {
             bindings = <
-&trans  &kp C_BRIGHTNESS_INC  &kp C_BRIGHTNESS_DEC  &kp TAB         &kp LS(TAB)      &kp C_VOLUME_UP    &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &kp DEL   &trans
-&trans  &kp LGUI              &kp LALT              &kp LSHFT       &kp LCTRL        &kp C_VOL_DN       &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &kp BSPC  &trans
-&trans  &mmv MOVE_LEFT        &mmv MOVE_UP          &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp K_MUTE         &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &kp RET   &trans
-                                                    &mkp RCLK       &trans           &trans             &trans          &trans          &mkp LCLK
+&trans  &kp C_BRIGHTNESS_DEC  &kp C_BRI_UP  &kp LS(TAB)     &kp TAB          &kp C_VOLUME_UP    &kp HOME        &kp PAGE_UP     &kp PAGE_DOWN  &kp END          &kp DEL   &trans
+&trans  &kp LGUI              &kp LALT      &kp LSHFT       &mt LCTRL LC(L)  &kp C_VOL_DN       &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &kp BSPC  &trans
+&trans  &mmv MOVE_LEFT        &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp K_MUTE         &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &kp RET   &trans
+                                            &mkp RCLK       &trans           &trans             &trans          &trans          &mkp LCLK
             >;
 
             label = "nav";
@@ -77,10 +77,10 @@
 
         symbols {
             bindings = <
-&trans  &kp LESS_THAN  &kp GREATER_THAN  &kp LEFT_BRACE        &kp RIGHT_BRACE  &kp GRAVE      &kp COLON  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp LBKT      &kp RBKT         &trans
-&trans  &kp TILDE      &kp AT_SIGN       &kp HASH              &kp DOLLAR       &kp PERCENT    &kp EQUAL  &kp LCTRL             &kp LSHFT              &kp LGUI      &kp LALT         &trans
-&trans  &kp CARET      &kp AMPERSAND     &kp NON_US_BACKSLASH  &kp SLASH        &kp PIPE       &kp PLUS   &kp MINUS             &kp ASTERISK           &kp QUESTION  &kp EXCLAMATION  &trans
-                                         &trans                &trans           &trans         &trans     &trans                &trans
+&trans  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp PIPE         &kp CARET    &kp LEFT_BRACE              &kp RIGHT_BRACE              &kp DOLLAR              &kp RBKT                    &trans
+&trans  &kp EXCLAMATION  &kp ASTERISK   &kp FSLH          &kp EQUAL  &kp AMPERSAND    &kp HASH     &mt LCTRL LEFT_PARENTHESIS  &mt LSHFT RIGHT_PARENTHESIS  &mt LEFT_ALT SEMICOLON  &mt LEFT_WIN DOUBLE_QUOTES  &trans
+&trans  &kp TILDE        &kp PLUS       &kp LBKT          &kp RBKT   &kp PERCENT      &kp AT_SIGN  &kp COLON                   &kp COMMA                    &kp DOT                 &kp SQT                     &trans
+                                        &trans            &trans     &trans           &trans       &trans                      &trans
             >;
 
             label = "symbols";
@@ -99,10 +99,10 @@
 
         n_pad {
             bindings = <
-&trans  &kp Q  &kp W  &kp E      &kp R      &kp ASTERISK       &kp PLUS    &kp N7      &kp N8      &kp N9  &none   &trans
-&trans  &kp A  &kp S  &kp D      &kp F      &kp FSLH           &kp MINUS   &kp N4      &kp N5      &kp N6  &kp N0  &trans
-&trans  &kp Z  &kp X  &kp C      &kp V      &kp EXCLAMATION    &kp EQUAL   &kp N1      &kp N2      &kp N3  &none   &trans
-                      &kp GRAVE  &kp RCTRL  &trans             &bt BT_NXT  &bt BT_PRV  &bt BT_CLR
+&trans  &kp Q  &kp W  &kp E      &kp R      &kp ASTERISK    &kp PLUS    &kp N7      &kp N8      &kp N9  &none   &trans
+&trans  &kp A  &kp S  &kp D      &kp F      &kp FSLH        &kp MINUS   &kp N4      &kp N5      &kp N6  &kp N0  &trans
+&trans  &kp Z  &kp X  &kp C      &kp V      &kp PERCENT     &kp EQUAL   &kp N1      &kp N2      &kp N3  &none   &trans
+                      &kp GRAVE  &kp RCTRL  &trans          &bt BT_NXT  &bt BT_PRV  &bt BT_CLR
             >;
 
             label = "nums_pad";
