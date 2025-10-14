@@ -36,6 +36,36 @@
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <7 8 9>;
         };
+
+        lShift {
+            bindings = <&sk LEFT_SHIFT>;
+            key-positions = <29 28>;
+        };
+
+        rShift {
+            bindings = <&sk RIGHT_SHIFT>;
+            key-positions = <30 31>;
+        };
+
+        lGUI {
+            bindings = <&sk LEFT_GUI>;
+            key-positions = <28 27>;
+        };
+
+        rGUI {
+            bindings = <&sk RIGHT_GUI>;
+            key-positions = <31 32>;
+        };
+
+        lCtrl {
+            bindings = <&sk LCTRL>;
+            key-positions = <15 14>;
+        };
+
+        rCtrl {
+            bindings = <&sk RCTRL>;
+            key-positions = <20 21>;
+        };
     };
 
     keymap {
@@ -49,10 +79,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&gresc       &kp Q            &kp W           &kp F        &kp P             &kp B        &kp J        &kp L              &kp U         &kp Y            &kp SQT         &caps_word
-&key_repeat  &mt RIGHT_WIN A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M        &mt RIGHT_SHIFT N  &mt RCTRL E   &mt RIGHT_ALT I  &mt LEFT_WIN O  &key_repeat
-&none        &lt 3 Z          &kp X           &kp C        &kp D             &kp V        &kp K        &kp H              &kp COMMA     &kp DOT          &lt 3 SLASH     &none
-                                              &lt 4 ESC    &lt 1 SPACE       &lt 2 TAB    &lt 6 ENTER  &lt 5 BACKSPACE    &lt 7 DELETE
+&gresc       &kp Q  &kp W  &kp F      &kp P        &kp B        &kp J        &kp L            &kp U         &kp Y    &kp SQT    &caps_word
+&key_repeat  &kp A  &kp R  &kp S      &kp T        &kp G        &kp M        &kp N            &kp E         &kp I    &kp O      &key_repeat
+&mo 3        &kp Z  &kp X  &kp C      &kp D        &kp V        &kp K        &kp H            &kp COMMA     &kp DOT  &kp SLASH  &mo 3
+                           &lt 4 ESC  &lt 1 SPACE  &lt 2 TAB    &lt 6 ENTER  &lt 5 BACKSPACE  &lt 7 DELETE
             >;
 
             label = "base";
@@ -81,10 +111,10 @@
 
         buttons {
             bindings = <
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))    &kp LS(LC(Z))  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-&trans  &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none            &none          &kp RSHFT  &kp RCTRL  &kp RALT   &kp RGUI   &trans
-&trans  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))    &kp LS(LC(Z))  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
-                              &mkp MCLK  &mkp LCLK  &mkp RCLK        &mkp RCLK      &mkp LCLK  &mkp MCLK
+&trans  &kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))    &kp LS(LC(Z))  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
+&trans  &sk LEFT_WIN  &sk LALT   &sk LCTRL  &sk LSHFT  &none            &none          &sk RSHFT  &sk RCTRL  &sk RALT   &sk RGUI   &trans
+&trans  &kp LC(Z)     &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LS(LC(Z))    &kp LS(LC(Z))  &kp LC(V)  &kp LC(C)  &kp LC(X)  &kp LC(Z)  &trans
+                                 &mkp MCLK  &mkp LCLK  &mkp RCLK        &mkp RCLK      &mkp LCLK  &mkp MCLK
             >;
 
             label = "buttons";
