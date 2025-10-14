@@ -13,7 +13,7 @@
 
 &mt {
     flavor = "tap-preferred";
-    tapping-term-ms = <210>;
+    tapping-term-ms = <220>;
 };
 
 / {
@@ -28,16 +28,6 @@
         closeWindow {
             bindings = <&kp LC(Q)>;
             key-positions = <26 27 28>;
-        };
-
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <4 3>;
-        };
-
-        backspace {
-            bindings = <&kp BACKSPACE>;
-            key-positions = <8 9>;
         };
 
         backspaceWord {
