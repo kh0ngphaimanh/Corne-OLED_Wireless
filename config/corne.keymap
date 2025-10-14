@@ -37,36 +37,6 @@
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <7 8 9>;
         };
-
-        lShift {
-            bindings = <&sk LEFT_SHIFT>;
-            key-positions = <29 28>;
-        };
-
-        rShift {
-            bindings = <&sk RIGHT_SHIFT>;
-            key-positions = <30 31>;
-        };
-
-        lGUI {
-            bindings = <&sk LEFT_GUI>;
-            key-positions = <28 27>;
-        };
-
-        rGUI {
-            bindings = <&sk RIGHT_GUI>;
-            key-positions = <31 32>;
-        };
-
-        lCtrl {
-            bindings = <&sk LCTRL>;
-            key-positions = <15 14>;
-        };
-
-        rCtrl {
-            bindings = <&sk RCTRL>;
-            key-positions = <20 21>;
-        };
     };
 
     keymap {
@@ -91,10 +61,10 @@
 
         nav {
             bindings = <
-&trans  &none     &kp RG(Q)  &kp RG(W)  &kp RG(F)       &none    &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)      &kp LC(X)     &kp LC(Z)  &trans
-&trans  &kp LGUI  &kp LALT   &kp LCTRL  &kp LEFT_SHIFT  &none    &kp CLCK       &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
-&trans  &none     &none      &none      &none           &none    &kp INSERT     &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans
-                             &none      &trans          &none    &kp ENTER      &kp BACKSPACE   &kp DEL
+&trans  &none          &kp RG(Q)  &kp RG(W)  &kp RG(F)       &none    &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)      &kp LC(X)     &kp LC(Z)  &trans
+&trans  &kp LGUI       &kp LALT   &kp LCTRL  &kp LEFT_SHIFT  &none    &kp CLCK       &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
+&trans  &kp LA(LS(A))  &kp LA(I)  &kp LA(O)  &kp LC(L)       &none    &kp INSERT     &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans
+                                  &none      &trans          &none    &kp ENTER      &kp BACKSPACE   &kp DEL
             >;
 
             label = "nav";
@@ -134,10 +104,10 @@
 
         numbers {
             bindings = <
-&trans  &kp LBKT   &kp N7  &kp N8   &kp N9  &kp RBKT     &none  &none      &none      &none     &none     &trans
-&trans  &kp SEMI   &kp N4  &kp N5   &kp N6  &kp EQUAL    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
-&trans  &kp GRAVE  &kp N1  &kp N2   &kp N3  &kp BSLH     &none  &none      &none      &none     &none     &trans
-                           &kp DOT  &kp N0  &kp MINUS    &none  &trans     &none
+&trans  &kp PLUS      &kp N7  &kp N8   &kp N9  &kp SLASH    &none  &none      &none      &none     &none     &trans
+&trans  &kp ASTERISK  &kp N4  &kp N5   &kp N6  &kp EQUAL    &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
+&trans  &kp PERCENT   &kp N1  &kp N2   &kp N3  &kp MINUS    &none  &none      &none      &none     &none     &trans
+                              &kp DOT  &kp N0  &kp SPACE    &none  &trans     &none
             >;
 
             label = "nums";
