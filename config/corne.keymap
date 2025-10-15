@@ -12,12 +12,15 @@
 #include <dt-bindings/zmk/pointing.h>
 
 &mt {
-    tapping-term-ms = <230>;
+    tapping-term-ms = <220>;
     flavor = "balanced";
     require-prior-idle-ms = <125>;
 };
 
-&lt { tapping-term-ms = <220>; };
+&lt {
+    tapping-term-ms = <220>;
+    require-prior-idle-ms = <125>;
+};
 
 / {
     combos {
@@ -25,7 +28,7 @@
 
         equal {
             bindings = <&kp EQUAL>;
-            key-positions = <7 8>;
+            key-positions = <31 32>;
         };
 
         closeWindow {
@@ -36,6 +39,11 @@
         backspaceWord {
             bindings = <&kp LC(BACKSPACE)>;
             key-positions = <7 8 9>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMICOLON>;
+            key-positions = <32 33>;
         };
     };
 
@@ -52,7 +60,7 @@
             bindings = <
 &gresc       &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J        &kp L              &kp U         &kp Y            &kp SQT          &caps_word
 &key_repeat  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M        &mt RIGHT_SHIFT N  &mt RCTRL E   &mt RIGHT_ALT I  &mt RIGHT_GUI O  &key_repeat
-&mo 3        &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K        &kp H              &kp COMMA     &kp DOT          &kp SLASH        &mo 3
+&sl 3        &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K        &kp H              &kp COMMA     &kp DOT          &kp SLASH        &sl 3
                                              &lt 4 ESC    &lt 1 SPACE       &lt 2 TAB    &lt 6 ENTER  &lt 5 BACKSPACE    &lt 7 DELETE
             >;
 
