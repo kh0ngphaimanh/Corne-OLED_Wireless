@@ -139,7 +139,7 @@
 
         numbers {
             if-layers = <1 2>;
-            then-layer = <6>;
+            then-layer = <3>;
         };
     };
 };
