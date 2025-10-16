@@ -56,7 +56,7 @@
 &gresc       &kp Q           &kp W           &kp F        &kp P             &kp B        &kp J        &kp L              &kp U         &kp Y            &kp SQT          &caps_word
 &key_repeat  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LCTRL S  &mt LEFT_SHIFT T  &kp G        &kp M        &mt RIGHT_SHIFT N  &mt RCTRL E   &mt RIGHT_ALT I  &mt RIGHT_GUI O  &key_repeat
 &sl 7        &kp Z           &kp X           &kp C        &kp D             &kp V        &kp K        &kp H              &kp COMMA     &kp DOT          &kp SLASH        &sl 7
-                                             &lt 3 ESC    &kp SPACE         &lt 1 TAB    &lt 5 ENTER  &kp BACKSPACE      &lt 6 DELETE
+                                             &lt 5 ESC    &kp SPACE         &lt 1 TAB    &lt 2 ENTER  &kp BACKSPACE      &lt 6 DELETE
             >;
 
             label = "base";
@@ -64,45 +64,13 @@
 
         nav {
             bindings = <
-&trans  &none          &none      &none      &mo 2           &none     &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)      &kp LC(X)     &kp LC(Z)  &trans
+&trans  &none          &none      &none      &mo 5           &none     &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)      &kp LC(X)     &kp LC(Z)  &trans
 &trans  &kp LGUI       &kp LALT   &kp LCTRL  &kp LEFT_SHIFT  &none     &kp CLCK       &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &trans
 &trans  &kp LA(LS(A))  &kp LA(I)  &kp LA(O)  &kp LC(L)       &none     &kp INSERT     &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &trans
                                   &none      &none           &trans    &trans         &kp BACKSPACE   &kp DEL
             >;
 
             label = "nav";
-        };
-
-        mouse {
-            label = "mouse";
-            bindings = <
-&trans  &none  &none  &none  &trans  &none     &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)       &kp LC(X)     &kp LC(Z)        &trans
-&trans  &none  &none  &none  &none   &none     &none          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-&trans  &none  &none  &none  &none   &none     &none          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
-                      &none  &none   &trans    &mkp RCLK      &mkp LCLK       &mkp MCLK
-            >;
-        };
-
-        media {
-            bindings = <
-&trans  &none     &none     &none      &none      &none    &none              &none             &none              &none            &none         &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &ext_power EP_TOG  &kp K_PREV        &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp K_NEXT    &trans
-&trans  &none     &none     &none      &none      &none    &out OUT_TOG       &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3  &trans
-                            &trans     &none      &none    &kp K_STOP         &kp K_PLAY_PAUSE  &kp K_MUTE
-            >;
-
-            label = "media";
-        };
-
-        numbers {
-            bindings = <
-&trans  &none   &kp N7  &kp N8  &kp N9  &kp COMMA     &none   &kp PLUS   &kp ASTERISK  &none        &none     &trans
-&trans  &kp N0  &kp N4  &kp N5  &kp N6  &kp EQUAL     &none   &kp LSHFT  &kp LCTRL     &kp LALT     &kp LGUI  &trans
-&trans  &none   &kp N1  &kp N2  &kp N3  &kp PERIOD    &none   &kp MINUS  &kp SLASH     &kp PERCENT  &none     &trans
-                        &none   &none   &trans        &trans  &none      &none
-            >;
-
-            label = "nums";
         };
 
         symbols {
@@ -116,12 +84,44 @@
             label = "syms";
         };
 
+        numbers {
+            bindings = <
+&trans  &none   &kp N7  &kp N8  &kp N9  &kp COMMA     &none   &kp PLUS   &kp ASTERISK  &none        &none     &trans
+&trans  &kp N0  &kp N4  &kp N5  &kp N6  &kp EQUAL     &none   &kp LSHFT  &kp LCTRL     &kp LALT     &kp LGUI  &trans
+&trans  &none   &kp N1  &kp N2  &kp N3  &kp PERIOD    &none   &kp MINUS  &kp SLASH     &kp PERCENT  &none     &trans
+                        &none   &none   &trans        &trans  &none      &none
+            >;
+
+            label = "nums";
+        };
+
+        mouse {
+            label = "mouse";
+            bindings = <
+&trans  &none  &none  &none  &mo 5  &none     &kp LC(LS(Z))  &kp LC(LS(V))   &kp LC(C)       &kp LC(X)     &kp LC(Z)        &trans
+&trans  &none  &none  &none  &none  &none     &none          &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
+&trans  &none  &none  &none  &none  &none     &none          &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &trans
+                      &none  &none  &trans    &mkp RCLK      &mkp LCLK       &mkp MCLK
+            >;
+        };
+
+        media {
+            bindings = <
+&trans  &none     &none     &none      &none      &none    &none              &none             &none              &none            &none         &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &ext_power EP_TOG  &kp K_PREV        &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp K_NEXT    &trans
+&trans  &none     &none     &none      &none      &none    &out OUT_TOG       &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3  &trans
+                            &mo 5      &none      &none    &kp K_STOP         &kp K_PLAY_PAUSE  &kp K_MUTE
+            >;
+
+            label = "media";
+        };
+
         functions {
             bindings = <
 &bootloader  &kp F12  &kp F7  &kp F8             &kp F9     &kp PRINTSCREEN    &none  &none      &none      &none     &none     &bootloader
 &trans       &kp F11  &kp F4  &kp F5             &kp F6     &kp SCROLLLOCK     &none  &kp LSHFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
 &trans       &kp F10  &kp F1  &kp F2             &kp F3     &kp PAUSE_BREAK    &none  &none      &none      &none     &none     &trans
-                              &kp K_APPLICATION  &kp SPACE  &kp TAB            &none  &none      &trans
+                              &kp K_APPLICATION  &kp SPACE  &kp TAB            &none  &none      &mo 6
             >;
 
             label = "funs";
@@ -143,8 +143,8 @@
         compatible = "zmk,conditional-layers";
 
         number {
-            if-layers = <1 5>;
-            then-layer = <4>;
+            if-layers = <1 2>;
+            then-layer = <5>;
         };
     };
 };
