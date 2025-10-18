@@ -17,6 +17,11 @@
     require-prior-idle-ms = <125>;
 };
 
+&lt {
+    require-prior-idle-ms = <125>;
+    tapping-term-ms = <210>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
