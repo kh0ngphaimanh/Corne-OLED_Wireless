@@ -38,7 +38,7 @@
 
         mouse {
             bindings = <&mo 4>;
-            key-positions = <4>;
+            key-positions = <29>;
             layers = <1>;
         };
     };
@@ -54,10 +54,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&gresc       &kp Q           &kp W           &kp F             &kp P        &kp B        &kp J        &kp L          &kp U              &kp Y            &kp SQT          &caps_word
-&key_repeat  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt LCTRL T  &kp G        &kp M        &mt RCTRL N    &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_GUI O  &key_repeat
-&mo 5        &kp Z           &kp X           &kp C             &kp D        &kp V        &kp K        &kp H          &kp COMMA          &kp DOT          &kp SLASH        &mo 6
-                                             &kp ESCAPE        &kp SPACE    &lt 1 TAB    &lt 2 ENTER  &kp BACKSPACE  &kp DEL
+&gresc       &kp Q           &kp W           &kp F             &kp P        &kp B      &kp J      &kp L            &kp U              &kp Y            &kp SQT          &caps_word
+&key_repeat  &mt LEFT_GUI A  &mt LEFT_ALT R  &mt LEFT_SHIFT S  &mt LCTRL T  &kp G      &kp M      &mt RCTRL N      &mt RIGHT_SHIFT E  &mt RIGHT_ALT I  &mt RIGHT_GUI O  &key_repeat
+&mo 5        &kp Z           &kp X           &kp C             &kp D        &kp V      &kp K      &kp H            &kp COMMA          &kp DOT          &kp SLASH        &mo 6
+                                             &kp ESCAPE        &lt 1 SPACE  &kp TAB    &kp ENTER  &lt 2 BACKSPACE  &kp DEL
             >;
 
             label = "base";
@@ -65,10 +65,10 @@
 
         nav {
             bindings = <
-&trans  &none          &none      &none           &none      &none     &kp LC(LS(Z))   &kp LC(LS(V))  &kp LC(C)     &kp LC(X)  &kp LC(Z)  &trans
-&trans  &kp LGUI       &kp LALT   &kp LEFT_SHIFT  &kp LCTRL  &none     &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp ENTER  &trans
-&trans  &kp LA(LS(A))  &kp LA(I)  &kp LA(O)       &kp LC(L)  &none     &kp HOME        &kp PG_DN      &kp PG_UP     &kp END    &kp INS    &trans
-                                  &none           &trans     &trans    &trans          &trans         &kp DEL
+&trans  &none          &none      &none           &none      &none    &kp LC(LS(Z))   &kp LC(LS(V))  &kp LC(C)     &kp LC(X)  &kp LC(Z)  &trans
+&trans  &kp LGUI       &kp LALT   &kp LEFT_SHIFT  &kp LCTRL  &none    &kp LEFT_ARROW  &kp DOWN       &kp UP_ARROW  &kp RIGHT  &kp ENTER  &trans
+&trans  &kp LA(LS(A))  &kp LA(I)  &kp LA(O)       &kp LC(L)  &none    &kp HOME        &kp PG_DN      &kp PG_UP     &kp END    &kp INS    &trans
+                                  &none           &trans     &none    &none           &trans         &kp DEL
             >;
 
             label = "nav";
@@ -79,7 +79,7 @@
 &trans  &kp NON_US_BACKSLASH  &kp GRAVE     &kp LESS_THAN  &kp GREATER_THAN  &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR      &key_repeat        &trans
 &trans  &kp EXCLAMATION       &kp ASTERISK  &kp FSLH       &kp MINUS         &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE  &kp DOUBLE_QUOTES  &trans
 &trans  &kp TILDE             &kp PLUS      &kp LBKT       &kp RBKT          &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp DOT         &kp SQT            &trans
-                                            &kp QUESTION   &trans            &trans           &trans       &trans                &none
+                                            &kp QUESTION   &trans            &none            &none        &trans                &none
             >;
 
             label = "syms";
@@ -87,10 +87,10 @@
 
         numbers {
             bindings = <
-&trans  &none   &kp N7  &kp N8  &kp N9  &kp COMMA     &none   &kp PLUS   &kp ASTERISK    &none        &none     &trans
-&trans  &kp N0  &kp N4  &kp N5  &kp N6  &kp EQUAL     &none   &kp LCTRL  &kp LEFT_SHIFT  &kp LALT     &kp LGUI  &trans
-&trans  &none   &kp N1  &kp N2  &kp N3  &kp PERIOD    &none   &kp MINUS  &kp SLASH       &kp PERCENT  &none     &trans
-                        &none   &trans  &trans        &trans  &trans     &none
+&trans  &kp N9  &kp N7       &kp N1        &kp N3     &kp N5       &kp N4            &kp N2     &kp N0          &kp N6    &kp N8    &trans
+&trans  &none   &kp PERCENT  &kp ASTERISK  &kp PLUS   &kp EQUAL    &kp GREATER_THAN  &kp LCTRL  &kp LEFT_SHIFT  &kp LALT  &kp LGUI  &trans
+&trans  &none   &none        &kp FSLH      &kp MINUS  &kp SPACE    &kp LESS_THAN     &kp COMMA  &kp DOT         &none     &none     &trans
+                             &none         &trans     &none        &none             &trans     &none
             >;
 
             label = "nums";
@@ -99,16 +99,16 @@
         mouse {
             label = "mouse";
             bindings = <
-&trans  &none  &none  &none  &none   &none     &none      &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &none  &trans
-&trans  &none  &none  &none  &none   &none     &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &trans
-&trans  &none  &none  &none  &none   &none     &none      &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &trans
-                      &none  &trans  &trans    &mkp RCLK  &mkp LCLK       &mkp MCLK
+&trans  &none  &none  &none  &none   &none    &none      &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &none  &trans
+&trans  &none  &none  &none  &none   &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &trans
+&trans  &none  &none  &none  &none   &none    &none      &msc SCRL_LEFT  &none           &msc SCRL_RIGHT  &none  &trans
+                      &none  &trans  &none    &mkp RCLK  &mkp LCLK       &mkp MCLK
             >;
         };
 
         media {
             bindings = <
-&trans  &none     &none     &none           &none      &none    &none              &none             &none              &none            &none         &trans
+&trans  &none     &none     &none           &none      &none    &bt BT_CLR_ALL     &bt BT_CLR        &none              &none            &none         &trans
 &trans  &kp LGUI  &kp LALT  &kp LEFT_SHIFT  &kp LCTRL  &none    &ext_power EP_TOG  &kp K_PREV        &kp K_VOLUME_DOWN  &kp K_VOLUME_UP  &kp K_NEXT    &trans
 &trans  &none     &none     &none           &none      &none    &out OUT_TOG       &bt BT_SEL 0      &bt BT_SEL 1       &bt BT_SEL 2     &bt BT_SEL 3  &trans
                             &none           &none      &none    &kp K_STOP         &kp K_PLAY_PAUSE  &kp K_MUTE
