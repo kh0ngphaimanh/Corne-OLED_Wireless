@@ -13,12 +13,12 @@
 
 &mt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <250>;
 };
 
 &lt {
     flavor = "balanced";
-    tapping-term-ms = <150>;
+    tapping-term-ms = <250>;
 };
 
 / {
